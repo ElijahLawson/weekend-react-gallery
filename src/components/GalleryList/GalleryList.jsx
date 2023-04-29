@@ -6,10 +6,11 @@ function GalleryList(props) {
     const galleryList = props.galleryList;
     console.log(galleryList);
     return(
-        <div className='.container'>
+        <div className='grid grid-cols-4 gap-4'>
             {galleryList.map((item) => {
                 return (
                     <GalleryItem
+                        key={item.id}
                         item={item}
                         getGalleryList={props.getGalleryList}
                     />
