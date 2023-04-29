@@ -1,0 +1,4 @@
+Components:
+- App
+- GalleryList
+- GalleryItem
