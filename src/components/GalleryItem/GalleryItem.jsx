@@ -25,9 +25,11 @@ function GalleryItem(props) {
     }
     
     return(
-        <div className="gallery-item" key={galleryItem.id} >
-            {!isClicked ? <img src={galleryItem.path} onClick={() => {handleImgTextToggle()}}></img> : <div className="description" onClick={() => {handleImgTextToggle()}}><p>{galleryItem.description}</p></div>}
-            <button type="submit" onClick={() => {handleLikesUpdate(galleryItem.id)}} className="">Love it!</button>
+        <div className="gallery-item border-8 border-slate-200 grid items-center" key={galleryItem.id}>
+            {!isClicked ? <img className=" m-auto row-span-2" src={galleryItem.path} onClick={() => {handleImgTextToggle()}}></img> :
+             <div className="flex h-48" onClick={() => {handleImgTextToggle()}}><p className="m-auto">{galleryItem.description}</p></div>}
+            {!isClicked ? <button className="text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-full text-sm px-5 py-2.5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 m-auto" type="submit" 
+                                onClick={() => {handleLikesUpdate(galleryItem.id)}}>🤍</button> : ''}
             <p>{galleryItem.likes} people love this!</p>
         </div>
     )
