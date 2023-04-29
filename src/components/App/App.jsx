@@ -18,7 +18,6 @@ function App() {
       method: 'GET',
       url: '/gallery'
     }).then((response) => {
-      console.log(response);
       setGalleryList(response.data)
     }).catch((error) => {
       console.log('The GET request for gallery from server failed.')
