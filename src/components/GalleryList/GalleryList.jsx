@@ -4,7 +4,6 @@ import './GalleryList.css';
 function GalleryList(props) {
 
     const galleryList = props.galleryList;
-    console.log(galleryList);
     return(
         <div className='grid grid-cols-4 gap-4'>
             {galleryList.map((item) => {
