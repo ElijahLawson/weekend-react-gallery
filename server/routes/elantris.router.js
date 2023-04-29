@@ -10,11 +10,11 @@ router.put('/like/:id', (req, res) => {
     const galleryId = req.params.id;
     
     let sqlText = `
-    UPDATE gallery
+    UPDATE elantris
     SET "likes" = "likes" + 1
     WHERE "id" = $1;
     `
-    sqlValues = [galleryId]
+    sqlValues = [galleryId];
     
     pool.query(sqlText, sqlValues)
     .then((result) => {
@@ -28,7 +28,7 @@ router.put('/like/:id', (req, res) => {
 // GET Route
 router.get('/', (req, res) => {
     let sqlText = `
-        SELECT * FROM gallery ORDER BY path;
+        SELECT * FROM elantris ORDER BY path;
     `
 
     pool.query(sqlText)

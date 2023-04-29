@@ -1,9 +1,10 @@
-import GalleryItem from '../GalleryItem/GalleryItem'
+import GalleryItem from './GalleryItem/GalleryItem'
 import './GalleryList.css';
 
 function GalleryList(props) {
 
     const galleryList = props.galleryList;
+
     return(
         <div className='grid grid-cols-4 gap-4'>
             {galleryList.map((item) => {
@@ -12,6 +13,7 @@ function GalleryList(props) {
                         key={item.id}
                         item={item}
                         getGalleryList={props.getGalleryList}
+                        book = {props.book}
                     />
                 )
             })}
